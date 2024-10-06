@@ -3,7 +3,7 @@ using System . Collections . Generic ;
 using UnityEngine ;
 using UnityEngine . InputSystem ;
 using UnityEngine.UI;
-using TMpro;
+using TMPro;
 
 public class PlayerController : MonoBehaviour
 {
@@ -11,14 +11,14 @@ public class PlayerController : MonoBehaviour
     public Vector2 moveValue;
     public float speed;
     private int count;
-    private int numPickups = 0;
-    public TextMeshProUGUI scoreText;
-    public TextMeshProUGUI winText;
+    private int numPickups = 4;
+    public TextMeshProUGUI ScoreText;
+    public TextMeshProUGUI WinText;
 
     void Start()
     {
         count = 0;
-        winText.text = "";
+        WinText.text = "";
         SetCountText ();
     }
     void OnMove(InputValue value)
@@ -44,10 +44,10 @@ public class PlayerController : MonoBehaviour
     }
     private void SetCountText()
     {
-        scoreText.text = "Score: " + count.ToString();
+        ScoreText.text = "Score: " + count.ToString();
         if(count >= numPickups)
         {
-            winText.text = "You win!";
+            WinText.text = "You win!";
         }
     }
  
